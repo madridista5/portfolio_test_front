@@ -1,9 +1,10 @@
 import React from "react";
+import Man from '../../images/man.png';
 
 import './Intro.css';
 
 export const Intro = () => {
-    return(
+    return (
         <div className="i">
             <div className="i-left">
                 <div className="i-left-wrapper">
@@ -18,9 +19,15 @@ export const Intro = () => {
                             <div className="i-title-item">Content Creator</div>
                         </div>
                     </div>
+                    <p className="i-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam
+                        consequatur eaque enim explicabo in maiores minima nihil nisi, non numquam quaerat saepe
+                        temporibus tenetur velit voluptatem, voluptatum!
+                    </p>
                 </div>
             </div>
-            <div className="i-right">right</div>
+            <div className="i-right">
+                <img src={Man} alt="man" className="i-img"/>
+            </div>
         </div>
     );
 }

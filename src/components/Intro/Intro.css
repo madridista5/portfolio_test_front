@@ -5,6 +5,9 @@
 
 .i-left {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .i-right {
@@ -13,6 +16,10 @@
 
 .i-left-wrapper {
     padding: 50px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .i-intro {
@@ -29,6 +36,29 @@
     overflow: hidden;
 }
 
+.i-title-wrapper {
+    height: 100%;
+    animation: move 10s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+    25% {
+        transform: translateY(-50px);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+
+    75% {
+        transform: translateY(-150px);
+    }
+
+    100% {
+        transform: translateY(-200px);
+    }
+}
+
 .i-title-item {
     height: 50px;
     font-size: 30px;
@@ -36,4 +66,10 @@
     color: #59b256;
     display: flex;
     align-items: center;
+}
+
+.i-img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
 }
