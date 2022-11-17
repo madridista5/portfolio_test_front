@@ -1,13 +1,16 @@
-import React, {useRef, SyntheticEvent} from "react";
+import React, {useRef, SyntheticEvent, useContext} from "react";
 import emailjs from '@emailjs/browser';
 import Phone from '../../images/phone.png';
 import Email from '../../images/email.png';
 import Address from '../../images/address.png';
+import {ThemeContext} from "../../context/ThemeContext";
 
 import './Contact.css';
 
 export const Contact = () => {
     const formRef = useRef();
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
     const handleSubmit = (e: SyntheticEvent) => {
         e.preventDefault();
@@ -58,10 +61,15 @@ export const Contact = () => {
                         amet
                         autem beatae corporis impedit molestiae, nobis placeat quis!</p>
                     <form ref={formRef} onSubmit={handleSubmit}>
-                        <input type="text" placeholder="Name" name="user_name"/>
-                        <input type="text" placeholder="Subject" name="user_subject"/>
-                        <input type="text" placeholder="Email" name="user_email"/>
-                        <textarea rows="5" placeholder="Message" name="message"/>
+                        <input style={{backgroundColor: darkMode && '#333'}} type="text" placeholder="Name" name="user_name"/>
+                        <input style={{backgroundColor: darkMode && '#333'}} type="text" placeholder="Subject" name="user_subject"/>
+                        <input style={{backgroundColor: darkMode && '#333'}} type="text" placeholder="Email" name="user_email"/>
+                        <textarea
+                            style={{backgroundColor: darkMode && '#333'}}
+                            rows="5"
+                            placeholder="Message"
+                            name="message"
+                        />
                         <button type="submit" value="Send">Submit</button>
                     </form>
                 </div>
